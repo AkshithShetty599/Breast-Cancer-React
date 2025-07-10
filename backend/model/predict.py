@@ -5,7 +5,7 @@ from config.utils import scale_input,get_clean_data
 MODEL_VERSION = '1.0.0'
 
 # Load model at import time to avoid reloading for every request
-with open("model\model.pkl", "rb") as f:
+with open("model/model.pkl", "rb") as f:
     model = pickle.load(f)
 
 def predict_diagnosis(input_dict: dict) -> dict:
