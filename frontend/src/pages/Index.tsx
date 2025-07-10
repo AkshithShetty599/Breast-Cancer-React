@@ -21,7 +21,7 @@ const Index = () => {
 
   // 🔁 Fetch feature stats and set mean values
   useEffect(() => {
-    axios.get('http://localhost:8000/feature-stats')  // replace with your deployed backend URL
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/feature-stats`)  // replace with your deployed backend URL
       .then((res) => {
         const stats = res.data;
         setFeatureStats(stats);
@@ -54,7 +54,7 @@ const Index = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:8000/predict',
+        `${import.meta.env.VITE_BACKEND_URL}/predict`,
         features
       );
 

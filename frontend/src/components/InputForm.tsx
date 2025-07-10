@@ -206,7 +206,7 @@ export const InputForm: React.FC<InputFormProps> = ({
   const [featureStats, setFeatureStats] = useState<FeatureStats | null>(null);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/feature-stats')  // Replace with actual deployed URL
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/feature-stats`)  // Replace with actual deployed URL
       .then((res) => setFeatureStats(res.data))
       .catch((err) => {
         console.error('Error fetching feature stats', err);
